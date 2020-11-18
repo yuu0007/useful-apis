@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>Source: duncte.js</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -37,38 +37,48 @@
         <div class="burger-line-3"></div>
     </div>
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: duncte.js</h1>
 
     
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-    <hr>
     <section>
-        <article><h1>useful-apis</h1>
-<p>hello</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>const fetch = require('node-fetch');
+const chalk = require('chalk');
+
+/**
+ * The class for https://apis.duncte123.me
+ * Documentation for this api is in https://docs.duncte123.com
+ * @class
+ */
+class duncte {
+
+	/**
+	 * Get a random string!
+	 * @param {number} length The length of the random string.
+	 * @static
+	 * @async
+	 * @returns {Object}
+	 */
+	static async randomString(length) {
+		if (typeof length !== 'string') return console.error(`${chalk.bgRed('Error')} - Length must be a number.`);
+		const body = await fetch(`https://apis.duncte123.me/random-string/${length}`).then(res => res.json());
+		if (body.success === false) return console.error(`${chalk.bgRed(`${body.error.type}`)} - ${body.error.message}`);
+		const data = {
+			string: body.data
+		};
+		return data;
+	}
+
+}
+
+module.exports = duncte;
+</code></pre>
+        </article>
     </section>
-
-
 
 
 
