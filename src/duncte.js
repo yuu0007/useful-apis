@@ -47,13 +47,33 @@ class duncte {
 	 * @param {number} count The amount of results to return.
 	 * @static
 	 * @async
-	 * @returns {array}
+	 * @returns {Array}
 	 */
 	static async npm(count) {
 		if (typeof count !== 'number') return console.error(`${chalk.bgRed('Error')} - Count must be a number.`);
 		const body = await fetch(`https://apis.duncte123.me/npm?count=${count}`).then(res => res.json());
 		if (body.success === false) return console.error(`${chalk.bgRed(`${body.error.type}`)} - ${body.error.message}`);
 		return body.data;
+	}
+
+	/**
+	 * Returns a random meme.
+	 * @param {boolean} nsfw If we allow the response to be nsfw.
+	 * @static
+	 * @async
+	 * @returns {Object}
+	 */
+	static async getMeme(nsfw) {
+		if (typeof nsfw !== 'boolean') return console.error(`${chalk.bgRed('Error')} - NSFW must be a boolean.`);
+		const body = await fetch(`https://apis.duncte123.me/meme?nsfw=${nsfw}`).then(res => res.json());
+		if (body.success === false) return console.error(`${chalk.bgRed(`${body.error.type}`)} - ${body.error.message}`);
+		const data = {
+			title: body.data.title,
+			body: body.data.body,
+			url: body.data.url,
+			image: body.data.image
+		};
+		return data;
 	}
 
 }
