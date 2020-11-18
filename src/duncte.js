@@ -95,6 +95,31 @@ class duncte {
 		return data;
 	}
 
+	/**
+	 * Decode tokens for a discord bot.
+	 * @param {String} token The bot token.
+	 * @static
+	 * @async
+	 * @returns {Object}
+	 */
+	static async decodeToken(token) {
+		if (typeof token !== 'string') return console.error(`${chalk.bgRed('Error')} - Token must be a string.`);
+		const botToken = {
+			token: token
+		};
+		const body = await fetch('https://apis.duncte123.me/token', {
+			method: 'post',
+			body: JSON.stringify(botToken),
+			headers: { 'Content-Type': 'application/json' }
+		}).then(res => res.json());
+		if (body.success === false) return console.error(`${chalk.bgRed(`${body.error.type}`)} - ${body.error.message}`);
+		const data = {
+			id: body.data.id,
+			timestamp: body.data.timestamp
+		};
+		return data;
+	}
+
 }
 
 module.exports = duncte;
