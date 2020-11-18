@@ -76,6 +76,25 @@ class duncte {
 		return data;
 	}
 
+	/**
+	 * Returns a random joke.
+	 * @param {boolean} nsfw If we allow the response to be nsfw.
+	 * @static
+	 * @async
+	 * @returns {Object}
+	 */
+	static async getJoke(nsfw) {
+		if (typeof nsfw !== 'boolean') return console.error(`${chalk.bgRed('Error')} - NSFW must be a boolean.`);
+		const body = await fetch(`https://apis.duncte123.me/joke?nsfw=${nsfw}`).then(res => res.json());
+		if (body.success === false) return console.error(`${chalk.bgRed(`${body.error.type}`)} - ${body.error.message}`);
+		const data = {
+			title: body.data.title,
+			body: body.data.body,
+			url: body.data.url
+		};
+		return data;
+	}
+
 }
 
 module.exports = duncte;
