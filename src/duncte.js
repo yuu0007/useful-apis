@@ -97,7 +97,7 @@ class duncte {
 
 	/**
 	 * Decode tokens for a discord bot.
-	 * @param {String} token The bot token.
+	 * @param {string} token The bot token.
 	 * @static
 	 * @async
 	 * @returns {Object}
