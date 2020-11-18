@@ -3,7 +3,6 @@ const chalk = require('chalk');
 
 /**
  * The class for https://apis.duncte123.me
- * Documentation for this api is in https://docs.duncte123.com
  * @class
  * @hideconstructor
  */
