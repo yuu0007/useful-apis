@@ -22,6 +22,26 @@ class duncte {
 		return body.data;
 	}
 
+	/**
+	 * Creates a loveship for two people!
+	 * @param {string} name1 The name of the first person.
+	 * @param {string} name2 The name of the second person.
+	 * @static
+	 * @async
+	 * @returns {object}
+	 */
+	static async love(name1, name2) {
+		if (typeof name1 !== 'string' || typeof name2 !== 'string') return console.error(`${chalk.bgRed('Error')} - The names must be a number.`);
+		const body = await fetch(`https://apis.duncte123.me/love/${name1}/${name2}`).then(res => res.json());
+		if (body.success === false) return console.error(`${chalk.bgRed(`${body.error.type}`)} - ${body.error.message}`);
+		const data = {
+			names: body.data.names,
+			score: body.data.score,
+			message: body.data.message
+		};
+		return data;
+	}
+
 }
 
 module.exports = duncte;
