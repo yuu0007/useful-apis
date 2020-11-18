@@ -42,6 +42,20 @@ class duncte {
 		return data;
 	}
 
+	/**
+	 * Searches for some npm meanings.
+	 * @param {number} count The amount of results to return.
+	 * @static
+	 * @async
+	 * @returns {array}
+	 */
+	static async npm(count) {
+		if (typeof count !== 'number') return console.error(`${chalk.bgRed('Error')} - Count must be a number.`);
+		const body = await fetch(`https://apis.duncte123.me/npm?count=${count}`).then(res => res.json());
+		if (body.success === false) return console.error(`${chalk.bgRed(`${body.error.type}`)} - ${body.error.message}`);
+		return body.data
+	}
+
 }
 
 module.exports = duncte;
