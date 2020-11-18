@@ -1,0 +1,31 @@
+{
+  "name": "useful-apis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint . --fix",
+    "docs": "npx jsdoc --configure ./.jsdoc.json --verbose index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuu0007/useful-apis.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuu0007/useful-apis/issues"
+  },
+  "homepage": "https://github.com/yuu0007/useful-apis#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.0",
+    "eslint": "^7.13.0",
+    "eslint-config-tesseract": "0.0.3",
+    "jsdoc-skyceil": "^1.0.6"
+  }
+}
