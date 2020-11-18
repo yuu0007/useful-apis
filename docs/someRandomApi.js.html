@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>Source: someRandomApi.js</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -37,47 +37,46 @@
         <div class="burger-line-3"></div>
     </div>
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: someRandomApi.js</h1>
 
     
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-    <hr>
     <section>
-        <article><h1>useful-apis</h1>
-<h1>example</h1>
-<pre class="prettyprint linenums source lang-js"><code>const { duncte } = require('useful-apis');
+        <article>
+            <pre class="prettyprint source linenums"><code>const fetch = require('node-fetch');
+const chalk = require('chalk');
 
-(async () => {
-	const string = await duncte.randomString(10);
-	console.log(string);
-})();
+/**
+ * The class for https://some-random-api.ml
+ * @class
+ * @hideconstructor
+ */
+class someRandomApi {
+
+	/**
+	 * Chat to a bot!
+	 * @param {string} message The message you wanna send to the chat bot.
+	 * @param {string} [apikey] Your api key. (Optional)
+	 * @static
+	 * @async
+	 * @returns {string}
+	 */
+	static async chat(message, apikey) {
+		if (typeof message !== 'string') return console.error(`${chalk.bgRed('Error')} - Message must be a string.`);
+		const body = await fetch(`https://some-random-api.ml/chatbot?message=${encodeURIComponent(message)}${apikey ? `&amp;key=${apikey}` : ''}`).then(res => res.json());
+		if (body.error !== undefined) return console.error(chalk.bgRed(body.error));
+		return body.response;
+	}
+
+}
+
+module.exports = someRandomApi;
 </code></pre>
-<h1>docs</h1>
-<p>https://yuu0007.github.io/useful-apis</p></article>
+        </article>
     </section>
-
-
 
 
 

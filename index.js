@@ -1,3 +1,4 @@
 module.exports = {
-	duncte: require('./src/duncte.js')
+	duncte: require('./src/duncte.js'),
+	someRandomApi: require('./src/someRandomApi.js')
 };

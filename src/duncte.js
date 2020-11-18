@@ -28,7 +28,7 @@ class duncte {
 	 * @param {string} name2 The name of the second person.
 	 * @static
 	 * @async
-	 * @returns {object}
+	 * @returns {Object}
 	 */
 	static async love(name1, name2) {
 		if (typeof name1 !== 'string' || typeof name2 !== 'string') return console.error(`${chalk.bgRed('Error')} - The names must be a number.`);
@@ -53,7 +53,7 @@ class duncte {
 		if (typeof count !== 'number') return console.error(`${chalk.bgRed('Error')} - Count must be a number.`);
 		const body = await fetch(`https://apis.duncte123.me/npm?count=${count}`).then(res => res.json());
 		if (body.success === false) return console.error(`${chalk.bgRed(`${body.error.type}`)} - ${body.error.message}`);
-		return body.data
+		return body.data;
 	}
 
 }
