@@ -15,7 +15,9 @@ class someCoolApi {
 	 * @returns {string}
 	 */
 	static async randomEmoji() {
-		const body = await fetch('http://api.somecool.repl.co/random-emoji').then(res => res.json());
+		const body = await fetch('http://api.somecool.repl.co/random-emoji').then(
+			res => res.json()
+		);
 		return body.emoji;
 	}
 
@@ -27,14 +29,33 @@ class someCoolApi {
 	 * @returns {Object}
 	 */
 	static async translate(text) {
-		if (typeof text !== 'string') return console.error(`${chalk.bgRed('ERROR')} - Text must be a string.`);
-		const body = await fetch(`http://api.somecool.repl.co/translate?text=${text}`).then(res => res.json());
+		if (typeof text !== 'string') { return console.error(`${chalk.bgRed('ERROR')} - Text must be a string.`); }
+		const body = await fetch(
+			`http://api.somecool.repl.co/translate?text=${encodeURIComponent(text)}`
+		).then(res => res.json());
 		const data = {
 			text: body.text,
 			translated: body.translated,
 			translatedFrom: body.translated_from
 		};
 		return data;
+	}
+
+	/**
+	 * Search for an image!
+	 * @param {string} query The image you want to search for.
+	 * @static
+	 * @async
+	 * @returns {string}
+	 */
+	static async imageSearch(query) {
+		if (typeof query !== 'string') { return console.error(`${chalk.bgRed('ERROR')} - Query must be a string.`); }
+		const body = await fetch(
+			`http://api.somecool.repl.co/image-search?query=${encodeURIComponent(
+				query
+			)}`
+		).then(res => res.json());
+		return body.result;
 	}
 
 }

@@ -1,6 +1,6 @@
 {
   "name": "useful-apis",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "A npm package that contains some useful apis!",
   "types": "types/index.d.ts",
   "main": "index.js",
