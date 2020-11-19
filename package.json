@@ -1,10 +1,11 @@
 {
   "name": "useful-apis",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "hello",
+  "types": "types/index.d.ts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node test/index",
     "lint": "npx eslint . --fix",
     "docs": "npx jsdoc --configure ./.jsdoc.json --verbose index.js -r src"
   },
@@ -31,5 +32,6 @@
   "directories": {
     "doc": "docs",
     "test": "test"
-  }
+  },
+  "optionalDependencies": {}
 }
