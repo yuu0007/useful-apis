@@ -1,7 +1,7 @@
 {
   "name": "useful-apis",
-  "version": "3.0.0",
-  "description": "hello",
+  "version": "3.1.0",
+  "description": "A npm package that contains some useful apis!",
   "types": "types/index.d.ts",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/yuu0007/useful-apis/issues"
   },
-  "homepage": "https://github.com/yuu0007/useful-apis#readme",
+  "homepage": "https://useful-apis.js.org",
   "dependencies": {
     "node-fetch": "^2.6.1"
   },

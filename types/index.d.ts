@@ -15,6 +15,8 @@ export namespace duncte {
 
     function randomString(...args: any[]): void;
 
+    function ytChannel(...args: any[]): void;
+
 }
 
 export namespace someRandomApi {

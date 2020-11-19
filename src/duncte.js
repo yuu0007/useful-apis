@@ -120,6 +120,28 @@ class duncte {
 		return data;
 	}
 
+	/**
+	 * Fetch the view and sub count from a youtube channel.
+	 * @param {string} apiKey Your youtube api key.
+	 * @param {string} channelId The channel id for the channel that you wanna view.
+	 * @static
+	 * @async
+	 * @returns {Object}
+	 */
+	static async ytChannel(apiKey, channelId) {
+		if (typeof apiKey !== 'string') return console.error(`${chalk.bgRed('Error')} - Api key must be a string.`);
+		else if (typeof channelId !== 'string') return console.error(`${chalk.bgRed('Error')} - Channel id must be a string.`);
+		const body = await fetch(`https://apis.duncte123.me/youtube/${apiKey}/${channelId}`).then(res => res.json());
+		if (body.success === false) return console.error(`${chalk.bgRed(`${body.error.type}`)} - ${body.error.message}`);
+		const data = {
+			subs: body.data.subs,
+			channel: body.data.channel,
+			views: body.data.views,
+			videos: body.data.videos
+		};
+		return data;
+	}
+
 }
 
 module.exports = duncte;
