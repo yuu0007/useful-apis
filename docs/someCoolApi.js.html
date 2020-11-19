@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: someRandomApi.js</title>
+    <title>Source: someCoolApi.js</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -37,7 +37,7 @@
         <div class="burger-line-3"></div>
     </div>
 
-    <h1 class="page-title">Source: someRandomApi.js</h1>
+    <h1 class="page-title">Source: someCoolApi.js</h1>
 
     
 
@@ -50,42 +50,44 @@
 const chalk = require('chalk');
 
 /**
- * The class for https://some-random-api.ml
+ * The class for http://api.somecool.repl.co
  * @class
  * @hideconstructor
  */
-class someRandomApi {
+class someCoolApi {
 
 	/**
-	 * Chat to a bot!
-	 * @param {string} message The message you wanna send to the chat bot.
-	 * @param {string} [apikey] Your api key. (Optional)
+	 * Get a random emoji!
 	 * @static
 	 * @async
 	 * @returns {string}
 	 */
-	static async chat(message, apikey) {
-		if (typeof message !== 'string') return console.error(`${chalk.bgRed('Error')} - Message must be a string.`);
-		const body = await fetch(`https://some-random-api.ml/chatbot?message=${encodeURIComponent(message)}${apikey ? `&amp;key=${apikey}` : ''}`).then(res => res.json());
-		if (body.error !== undefined) return console.error(chalk.bgRed(body.error));
-		return body.response;
+	static async randomEmoji() {
+		const body = await fetch('http://api.somecool.repl.co/random-emoji').then(res => res.json());
+		return body.emoji;
 	}
 
 	/**
-	 * Get a random dog fact!
-	 * @async
+	 * Translate text!
+	 * @param {string} text The text to translate.
 	 * @static
-	 * @returns {string}
+	 * @async
+	 * @returns {Object}
 	 */
-	static async dogFact() {
-		const body = await fetch('https://some-random-api.ml/facts/dog').then(res => res.json());
-		if (body.error !== undefined) return console.error(chalk.bgRed(body.error));
-		return body.fact;
+	static async translate(text) {
+		if (typeof text !== 'string') return console.error(`${chalk.bgRed('ERROR')} - Text must be a string.`);
+		const body = await fetch(`http://api.somecool.repl.co/translate?text=${text}`).then(res => res.json());
+		const data = {
+			text: body.text,
+			translated: body.translated,
+			translatedFrom: body.translated_from
+		};
+		return data;
 	}
 
 }
 
-module.exports = someRandomApi;
+module.exports = someCoolApi;
 </code></pre>
         </article>
     </section>

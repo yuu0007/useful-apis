@@ -22,4 +22,13 @@ export namespace duncte {
 export namespace someRandomApi {
     function chat(...args: any[]): void;
 
+    function dogFact(...args: any[]): void;
+
+}
+
+export namespace someCoolApi {
+    function randomEmoji(...args: any[]): void;
+
+    function translate(...args: any[]): void;
+    
 }
