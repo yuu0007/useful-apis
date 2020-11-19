@@ -17,4 +17,4 @@ const { duncte } = require('useful-apis');
 ```
 
 # docs
-https://yuu0007.github.io/useful-apis
+https://useful-apis.js.org

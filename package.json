@@ -1,37 +1,43 @@
 {
-  "name": "useful-apis",
-  "version": "3.1.0",
-  "description": "A npm package that contains some useful apis!",
-  "types": "types/index.d.ts",
-  "main": "index.js",
-  "scripts": {
-    "test": "node test/index",
-    "lint": "npx eslint . --fix",
-    "docs": "npx jsdoc --configure ./.jsdoc.json --verbose index.js -r src"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yuu0007/useful-apis.git"
-  },
-  "keywords": [],
-  "author": "yuu",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/yuu0007/useful-apis/issues"
-  },
-  "homepage": "https://useful-apis.js.org",
-  "dependencies": {
-    "node-fetch": "^2.6.1"
-  },
-  "devDependencies": {
-    "chalk": "^4.1.0",
-    "eslint": "^7.13.0",
-    "eslint-config-tesseract": "0.0.3",
-    "jsdoc-skyceil": "^1.0.6"
-  },
-  "directories": {
-    "doc": "docs",
-    "test": "test"
-  },
-  "optionalDependencies": {}
+	"name": "useful-apis",
+	"version": "3.2.0",
+	"description": "A npm package that contains some useful apis!",
+	"types": "types/index.d.ts",
+	"main": "index.js",
+	"scripts": {
+		"test": "node test/index",
+		"lint": "npx eslint . --fix",
+		"docs": "npx jsdoc --configure ./.jsdoc.json --verbose index.js -r src"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yuu0007/useful-apis.git"
+	},
+	"keywords": [
+		"duncte123",
+		"some-random-api",
+		"useful api",
+		"api",
+		"apis"
+	],
+	"author": "yuu0007",
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/yuu0007/useful-apis/issues"
+	},
+	"homepage": "https://useful-apis.js.org",
+	"dependencies": {
+		"node-fetch": "^2.6.1"
+	},
+	"devDependencies": {
+		"chalk": "^4.1.0",
+		"eslint": "^7.13.0",
+		"eslint-config-tesseract": "0.0.3",
+		"jsdoc-skyceil": "^1.0.6"
+	},
+	"directories": {
+		"doc": "docs",
+		"test": "test"
+	},
+	"optionalDependencies": {}
 }

@@ -23,6 +23,18 @@ class someRandomApi {
 		return body.response;
 	}
 
+	/**
+	 * Get a random dog fact!
+	 * @async
+	 * @static
+	 * @returns {string}
+	 */
+	static async dogFact() {
+		const body = await fetch('https://some-random-api.ml/facts/dog').then(res => res.json());
+		if (body.error !== undefined) return console.error(chalk.bgRed(body.error));
+		return body.fact;
+	}
+
 }
 
 module.exports = someRandomApi;
