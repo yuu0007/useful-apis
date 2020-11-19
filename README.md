@@ -1,8 +1,7 @@
 # useful-apis
-![Node version](https://img.shields.io/node/v/useful-apis.svg?style=flat)(http://nodejs.org/download/)
+![Node version](https://img.shields.io/node/v/useful-apis.svg?style=flat)
 
-![https://nodei.co/npm/useful-apis.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/useful-apis.png?downloads=true&downloadRank=true&stars=true)(https://www.npmjs.com/package/useful-apis)
-
+![https://nodei.co/npm/useful-apis.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/useful-apis.png?downloads=true&downloadRank=true&stars=true)
 # example
 ```js
 const { duncte } = require('useful-apis');
