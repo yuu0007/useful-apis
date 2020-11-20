@@ -1,3 +1,5 @@
+'use strict';
+
 const fetch = require('node-fetch');
 const chalk = require('chalk');
 
@@ -56,6 +58,30 @@ class someCoolApi {
 			)}`
 		).then(res => res.json());
 		return body.result;
+	}
+
+	/**
+	 * Search for a video in youtube!
+	 * @param {string} query The video you want to search for.
+	 * @static
+	 * @async
+	 * @returns {Object}
+	 */
+	static async ytSearch(query) {
+		if (typeof query !== 'string') { return console.error(`${chalk.bgRed('ERROR')} - Query must be a string.`); }
+		const body = await fetch(`http://api.somecool.repl.co/yt-search?search=${encodeURIComponent(query)}`).then(res => res.json());
+		if (body.message !== undefined) return console.error(chalk.bgRed(body.message));
+		const data = {
+			title: body.title,
+			url: body.url,
+			thumbnail: body.thumbnail,
+			duration: body.duration,
+			timeUploaded: body.uploaded,
+			views: Number(body.views).toLocaleString(),
+			uploaderName: body.uploader_name,
+			uploaderUrl: body.uploader_url
+		};
+		return data;
 	}
 
 }
