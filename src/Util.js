@@ -1,5 +1,10 @@
 const path = require('path');
 
+/**
+ * The util class.
+ * @class
+ * @hideconstructor
+ */
 class Util {
 
 	/**
