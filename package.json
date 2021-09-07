@@ -29,7 +29,7 @@
   },
   "homepage": "https://useful-apis.js.org",
   "dependencies": {
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.2"
   },
   "devDependencies": {
     "chalk": "4.1.0",
